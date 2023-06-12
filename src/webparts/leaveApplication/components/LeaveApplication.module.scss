@@ -1,0 +1,36 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.leaveApplication {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.Leave {
+  padding: 0%;
+}
+
+styles{
+  background-color: aliceblue;
+}
+table,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 15px;
+}
