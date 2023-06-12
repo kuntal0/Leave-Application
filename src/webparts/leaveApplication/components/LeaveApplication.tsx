@@ -47,6 +47,7 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
   componentDidMount(): void {
     this.getListItems();
   }
+
   // Get items
   public getListItems = () => {
     let listName = `Leave App Form`;
@@ -177,22 +178,23 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
 
 
     return (
+      <><h1>Leave Application</h1>
       <div className={styles.leaveApplication}>
-        <input
+        <h3>Employee Name  <input
           value={this.state.listTitle}
           type="text"
           name=""
           id="lsTitle"
-          placeholder="Title"
+          placeholder="Employee Name"
           onChange={(e) => {
             this.setState({
               listTitle: e.currentTarget.value,
             });
             // console.log(this.state.listTitle);
-          }}
-        />
-        <br /><br />
-        <input
+          } } />
+          </h3>
+        <h3>
+          Manager Email  <input
           value={this.state.listManagerEmail}
           type="text"
           name=""
@@ -202,10 +204,10 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
             this.setState({
               listManagerEmail: e.currentTarget.value,
             });
-          }}
-        />
-        <br /><br />
-        <input
+          } } />
+          </h3>
+
+        <h3>Start Date  <input
           value={this.state.listStartDate}
           type="date"
           name=""
@@ -215,9 +217,10 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
             this.setState({
               listStartDate: e.currentTarget.value as any,
             });
-          }}
-        />
-        <input
+          } } />
+          </h3>
+
+          <h3>End Date  <input
           value={this.state.listEndDate}
           type="date"
           name=""
@@ -227,10 +230,10 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
             this.setState({
               listEndDate: e.currentTarget.value as any,
             });
-          }}
-        /> <br /><br />
+          } } />
+          </h3>
 
-        <input
+          <h3>Reason  <input
           value={this.state.listReason}
           type="text"
           name=""
@@ -240,37 +243,59 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
             this.setState({
               listReason: e.currentTarget.value,
             });
-          }}
-        />
-        <br /><br />
+          } } />
+          </h3>
 
-        
-        <input
+          <h3>Status  <select 
           value={this.state.liststatus}
-          type="any"
+          placeholder='Status'
+          id="Isstatus" name="status"
+             onChange={(e) => {
+            this.setState({
+              liststatus: e.currentTarget.value as any,
+            });
+            
+          }}>
+
+          <option value="Pending">Pending</option>
+          <option value="Approved">Approved</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+        </h3>
+
+
+        {/* <h3>Status  <select
+          value={this.state.liststatus}
           name=""
           id="lsStatus"
           placeholder="Status"
           onChange={(e) => {
             this.setState({
-              liststatus: e.currentTarget.value,
+              liststatus: e.currentTarget.value as any,
             });
-          }}
-        />
-        <br /><br />
+          } } />
+          
+          <option value="Married">Married</option>
+          <option value="Unmarried">Unmarried</option>
+          <option value="Widow">Widow</option>
+          
+          </h3> */}
+          
 
+        <br /><br />
 
         <button
           onClick={() => {
             this.addItemInList();
-          }}
+          } }
         >
           Submit
         </button>
+        
         <button
           onClick={() => {
             this.updateItemInList(this.state.listSelectedID);
-          }}
+          } }
         >
           Update
         </button>
@@ -303,7 +328,7 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
                         listReason: emp.Reason,
                         liststatus: emp.Status,
                       });
-                    }}
+                    } }
                   >
                     Edit
                   </button>
@@ -312,7 +337,7 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
                   <button
                     onClick={() => {
                       this.deleteItem(emp.ID);
-                    }}
+                    } }
                   >
                     Delete
                   </button>
@@ -321,7 +346,7 @@ export default class LeaveApplication extends React.Component<ILeaveApplicationP
             );
           })}
         </table>
-      </div>
+      </div></>
     );
   }
 }
