@@ -4,6 +4,15 @@ import { ILeaveApplicationProps } from './ILeaveApplicationProps';
 //import { escape } from '@microsoft/sp-lodash-subset';
 import * as moment from "moment";
 import { SPHttpClient, SPHttpClientResponse } from "@microsoft/sp-http";
+//import { Stack, IStackTokens } from '@fluentui/react';
+//import { DefaultButton, PrimaryButton } from '@fluentui/react/lib/Button';
+//import { PropertyFieldColorPicker, PropertyFieldColorPickerStyle } from '@pnp/spfx-property-controls/lib/PropertyFieldColorPicker';
+
+// import PnPTelemetry from "@pnp/telemetry-js";
+// const telemetry = PnPTelemetry.getInstance();
+// telemetry.optOut();
+
+
 
 interface IListItem {
   ID: number;

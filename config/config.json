@@ -13,6 +13,8 @@
   },
   "externals": {},
   "localizedResources": {
-    "LeaveApplicationWebPartStrings": "lib/webparts/leaveApplication/loc/{locale}.js"
+    "LeaveApplicationWebPartStrings": "lib/webparts/leaveApplication/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+    
   }
 }

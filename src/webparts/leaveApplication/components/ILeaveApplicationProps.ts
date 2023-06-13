@@ -8,4 +8,7 @@ export interface ILeaveApplicationProps {
   userDisplayName: string;
   context: WebPartContext;
   listname:string;
+  disabled?: boolean;
+  checked?: boolean;
+  //color: string;
 }

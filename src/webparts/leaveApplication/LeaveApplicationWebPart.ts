@@ -1,9 +1,14 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
+
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  //PropertyFieldColorPicker
+  //PropertyFieldColorPicker,
+  //PropertyFieldColorPickerStyle,
+
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -15,6 +20,7 @@ import { ILeaveApplicationProps } from './components/ILeaveApplicationProps';
 export interface ILeaveApplicationWebPartProps {
   description: string;
   listname:string;
+  //color:string
 }
 
 export default class LeaveApplicationWebPart extends BaseClientSideWebPart<ILeaveApplicationWebPartProps> {
@@ -32,7 +38,8 @@ export default class LeaveApplicationWebPart extends BaseClientSideWebPart<ILeav
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
         context: this.context,
-        listname:this.properties.listname
+        listname:this.properties.listname,
+        //color:this.properties.color
 
       }
     );
@@ -99,6 +106,8 @@ export default class LeaveApplicationWebPart extends BaseClientSideWebPart<ILeav
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
+  protected get disableReactivePropertyChanges(): boolean {
+    return true;}
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
@@ -114,8 +123,22 @@ export default class LeaveApplicationWebPart extends BaseClientSideWebPart<ILeav
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
                 })
+                // PropertyFieldColorPicker('color', {
+                //   label: 'Color',
+                //   selectedColor: this.properties.color,
+                //   onPropertyChange: this.onPropertyPaneFieldChanged,
+                //   properties: this.properties,
+                //   disabled: false,
+                //   debounce: 1000,
+                //   isHidden: false,
+                //   alphaSliderHidden: false,
+                //   style: PropertyFieldColorPickerStyle.Full,
+                //   iconName: 'Precipitation',
+                //   key: 'colorFieldId'
+                // })
               ]
-            }
+            } 
+
           ]
         }
       ]
